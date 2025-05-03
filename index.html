@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blockchain and Smart Contracts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+      <h1>Blockchain and Smart Contracts</h1>
+      <p>Yury Ihnatsyeu</p>
+      <img src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg" alt="RS School Logo" style="margin-top: 20px; height: 100px;">
+    </section>
+
+    <section>
+      <h2>Introduction</h2>
+      <ul>
+        <li>What is blockchain?</li>
+        <li>Why smart contracts matter?</li>
+        <li>Scope of this talk</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What is Blockchain?</h2>
+      <ul>
+        <li>Decentralized ledger</li>
+        <li>Tamper-proof and transparent</li>
+        <li>Bitcoin as an example</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How Blockchain Works (Technical View)</h2>
+      <ul>
+        <li>Blocks: timestamp, nonce, previous hash</li>
+        <li>Merkle root & transaction tree</li>
+        <li>Hashing and block linking</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Consensus Mechanisms</h2>
+      <ul>
+        <li>Proof-of-Work (PoW)</li>
+        <li>Proof-of-Stake (PoS)</li>
+        <li>Why consensus is critical</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What Are Smart Contracts?</h2>
+      <ul>
+        <li>Self-executing agreements</li>
+        <li>Stored and run on blockchain</li>
+        <li>Triggered by conditions</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Smart Contracts: Technical View</h2>
+      <ul>
+        <li>Solidity language</li>
+        <li>Ethereum Virtual Machine (EVM)</li>
+        <li>Function calls via transactions</li>
+        <li>msg.sender, gas, modifiers</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Security and Best Practices</h2>
+      <ul>
+        <li>Events, visibility, access modifiers</li>
+        <li>Gas usage and cost</li>
+        <li>Reentrancy and overflow vulnerabilities</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Example Solidity Snippet</h2>
+      <pre><code data-trim data-noescape class="language-solidity">
+pragma solidity ^0.8.0;
+
+contract Payment {
+    address payable public seller;
+
+    constructor() {
+        seller = payable(msg.sender);
+    }
+
+    function pay() public payable {
+        require(msg.value > 0, "No funds sent");
+        seller.transfer(msg.value);
+    }
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Smart Contract Benefits</h2>
+      <ul>
+        <li>Efficiency</li>
+        <li>Transparency</li>
+        <li>Cost reduction</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Use Cases</h2>
+      <ul>
+        <li>Finance (DeFi)</li>
+        <li>Supply chain</li>
+        <li>Voting</li>
+        <li>Education, Healthcare</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Challenges</h2>
+      <ul>
+        <li>Scalability</li>
+        <li>Security</li>
+        <li>Regulation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Future Outlook</h2>
+      <ul>
+        <li>Ethereum 2.0, Layer 2</li>
+        <li>IoT and automation</li>
+        <li>Legal and environmental uses</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Thank You</h2>
+      <p>Prepared for RS School</p>
+      <img src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg" alt="RS School Logo" style="margin-top: 20px; height: 100px;">
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize();
+</script>
+
+</body>
+</html>
